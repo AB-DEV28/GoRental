@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoRental</title>
+
+  <!--vendor css ================================================== -->
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!--Bootstrap ================================================== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+  <!-- Style Sheet ================================================== -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Google Fonts ================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Raleway:wght@400;700&display=swap"
+    rel="stylesheet">
+
+
+  <!-- script ================================================== -->
+  <script src="js/modernizr.js"></script>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
+
+  <nav class="navbar navbar-expand-lg  navbar-light container-fluid py-3 position-fixed ">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav align-items-center justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link px-3" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 active" aria-current="page" href="faq.html">FAQs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="cars.html">Cars</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="#blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="#action">Contact</a>
+            </li>
+            <li class="nav-item dropdown text-center">
+              <a class="nav-link px-3 dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false" href="#">Pages <iconify-icon
+                  icon="material-symbols:arrow-drop-down"></iconify-icon></a>
+              <ul class="dropdown-menu">
+                <li><a href="about.html" class="dropdown-item text-uppercase ">About</a></li>
+                <li><a href="blog.html" class="dropdown-item text-uppercase ">Blog</a></li>
+                <li><a href="booking.html" class="dropdown-item text-uppercase ">Booking</a></li>
+                <li><a href="services.html" class="dropdown-item text-uppercase ">Services</a></li>
+                <li><a href="contact.html" class="dropdown-item text-uppercase ">Contact</a></li>
+                <li><a href="team.html" class="dropdown-item text-uppercase ">Our Team</a></li>
+                <li><a href="review.html" class="dropdown-item text-uppercase ">Reviews</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="d-flex mt-5 mt-lg-0 ps-xl-5 align-items-center justify-content-center ">
+            <ul class="navbar-nav justify-content-end align-items-center">
+              <li class="nav-item">
+                <a class="nav-link px-3" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Login </a>
+              </li>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="tabs-listing">
+                        <nav>
+                          <div class="nav nav-tabs d-flex justify-content-center border-0" id="nav-tab" role="tablist">
+                            <button class="btn btn-outline-primary text-uppercase me-3 active" id="nav-sign-in-tab"
+                              data-bs-toggle="tab" data-bs-target="#nav-sign-in" type="button" role="tab"
+                              aria-controls="nav-sign-in" aria-selected="true">Log
+                              In</button>
+                            <button class="btn btn-outline-primary text-uppercase" id="nav-register-tab"
+                              data-bs-toggle="tab" data-bs-target="#nav-register" type="button" role="tab"
+                              aria-controls="nav-register" aria-selected="false">Sign
+                              Up</button>
+                          </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                          <div class="tab-pane fade active show" id="nav-sign-in" role="tabpanel"
+                            aria-labelledby="nav-sign-in-tab">
+                            <form id="form1" class="form-group flex-wrap p-3 ">
+                              <div class="form-input col-lg-12 my-4">
+                                <label for="exampleInputEmail1"
+                                  class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                                  Address</label>
+                                <input type="text" id="exampleInputEmail1" name="email" placeholder="Email"
+                                  class="form-control ps-3">
+                              </div>
+                              <div class="form-input col-lg-12 my-4">
+                                <label for="inputPassword1"
+                                  class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
+                                <input type="password" id="inputPassword1" placeholder="Password"
+                                  class="form-control ps-3" aria-describedby="passwordHelpBlock">
+                                <div id="passwordHelpBlock" class="form-text text-center">
+                                  <a href="#" class=" password">Forgot Password ?</a>
+                                </div>
+
+                              </div>
+                              <label class="py-3">
+                                <input type="checkbox" required="" class="d-inline">
+                                <span class="label-body text-black">Remember Me</span>
+                              </label>
+                              <div class="d-grid my-3">
+                                <button class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Log
+                                  In</button>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="tab-pane fade" id="nav-register" role="tabpanel"
+                            aria-labelledby="nav-register-tab">
+                            <form id="form2" class="form-group flex-wrap p-3 ">
+                              <div class="form-input col-lg-12 my-4">
+                                <label for="exampleInputEmail2"
+                                  class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                                  Address</label>
+                                <input type="text" id="exampleInputEmail2" name="email" placeholder="Email"
+                                  class="form-control ps-3">
+                              </div>
+                              <div class="form-input col-lg-12 my-4">
+                                <label for="inputPassword2"
+                                  class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
+                                <input type="password" id="inputPassword2" placeholder="Password"
+                                  class="form-control ps-3" aria-describedby="passwordHelpBlock">
+                              </div>
+                              <label class="py-3">
+                                <input type="checkbox" required="" class="d-inline">
+                                <span class="label-body text-black">I agree to the <a href="#"
+                                    class="text-black password border-bottom">Privacy
+                                    Policy</a>
+                                </span>
+                              </label>
+                              <div class="d-grid my-3">
+                                <button
+                                  class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Sign
+                                  Up</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ul>
+            <button type="button" class="btn btn-outline-primary nav-button mx-3" data-bs-toggle="modal"
+              data-bs-target="#exampleModal2"> Sign in </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="tabs-listing">
+                      <nav>
+                        <div class="nav nav-tabs d-flex justify-content-center border-0" id="nav-tab2" role="tablist">
+                          <button class="btn btn-outline-primary text-uppercase me-4 " id="nav-sign-in-tab2"
+                            data-bs-toggle="tab" data-bs-target="#nav-sign-in2" type="button" role="tab"
+                            aria-controls="nav-sign-in2" aria-selected="false">Log
+                            In</button>
+                          <button class="btn btn-outline-primary text-uppercase active" id="nav-register-tab2"
+                            data-bs-toggle="tab" data-bs-target="#nav-register2" type="button" role="tab"
+                            aria-controls="nav-register2" aria-selected="true">Sign
+                            Up</button>
+                        </div>
+                      </nav>
+                      <div class="tab-content" id="nav-tabContent1">
+                        <div class="tab-pane fade " id="nav-sign-in2" role="tabpanel"
+                          aria-labelledby="nav-sign-in-tab2">
+                          <form id="form3" class="form-group flex-wrap p-3 ">
+                            <div class="form-input col-lg-12 my-4">
+                              <label for="exampleInputEmail3"
+                                class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                                Address</label>
+                              <input type="text" id="exampleInputEmail3" name="email" placeholder="Email"
+                                class="form-control ps-3">
+                            </div>
+                            <div class="form-input col-lg-12 my-4">
+                              <label for="inputPassword3"
+                                class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
+                              <input type="password" id="inputPassword3" placeholder="Password"
+                                class="form-control ps-3" aria-describedby="passwordHelpBlock">
+                              <div id="passwordHelpBlock2" class="form-text text-center">
+                                <a href="#" class=" password">Forgot Password ?</a>
+                              </div>
+
+                            </div>
+                            <label class="py-3">
+                              <input type="checkbox" required="" class="d-inline">
+                              <span class="label-body text-black">Remember Me</span>
+                            </label>
+                            <div class="d-grid my-3">
+                              <button class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Log
+                                In</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="tab-pane fade active show" id="nav-register2" role="tabpanel"
+                          aria-labelledby="nav-register-tab2">
+                          <form id="form4" class="form-group flex-wrap p-3 ">
+                            <div class="form-input col-lg-12 my-4">
+                              <label for="exampleInputEmail4"
+                                class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                                Address</label>
+                              <input type="text" id="exampleInputEmail4" name="email" placeholder="Email"
+                                class="form-control ps-3">
+                            </div>
+                            <div class="form-input col-lg-12 my-4">
+                              <label for="inputPassword4"
+                                class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
+                              <input type="password" id="inputPassword4" placeholder="Password"
+                                class="form-control ps-3" aria-describedby="passwordHelpBlock">
+                            </div>
+                            <label class="py-3">
+                              <input type="checkbox" required="" class="d-inline">
+                              <span class="label-body text-black">I agree to the <a href="#"
+                                  class="text-black password border-bottom">Privacy
+                                  Policy</a>
+                              </span>
+                            </label>
+                            <div class="d-grid my-3">
+                              <button class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Sign
+                                Up</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- hero section start  -->
+  <section id="hero" class=" position-relative overflow-hidden">
+    <div class="pattern-overlay pattern-right position-absolute">
+      <img src="images/hero-pattern-right.png" alt="pattern">
+    </div>
+    <div class="pattern-overlay pattern-left position-absolute">
+      <img src="images/hero-pattern-left.png" alt="pattern">
+    </div>
+    <div class="container text-center py-5 mt-5">
+      <div class="row my-5">
+        <div class="d-flex flex-wrap flex-column justify-content-center align-items-center">
+          <h2 class="page-title display-3 mt-5">FAQs</h2>
+          <nav class="breadcrumb">
+            <a class="breadcrumb-item" href="index.html">Home</a>
+            <span class="breadcrumb-item active" aria-current="page">FAQs</span>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faqs-wrap no-padding-bottom">
+    <div class="container mt-5">
+      <div class="row g-5 my-4">
+        <main class="col-md-8">
+          <h3 class="section-title text-uppercase">Frequently asked questions</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique temporibus officiis quidem consequuntur aspernatur in, harum impedit et, vitae molestiae sapiente perferendis aliquam id illo odio minus explicabo eum! Dolorem?
+          </p>
+          <div class="page-content my-5">
+
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+
+              <div class="accordion-item mt-3">
+                <h5 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne">
+                    Why to believe with GoCar Car rental service ?
+                  </button>
+                </h5>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                  <div class="accordion-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quo laboriosam, eveniet aliquam molestiae quas fugiat dolor deserunt? Aperiam itaque autem vero praesentium fugiat excepturi velit vitae repellat, natus aliquid.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseTwo">
+                    How to know which renting price price is best?
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingTwo">
+                  <div class="accordion-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quo laboriosam, eveniet aliquam molestiae quas fugiat dolor deserunt? Aperiam itaque autem vero praesentium fugiat excepturi velit vitae repellat, natus aliquid.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseThree">
+                    What are the special features of gocar?
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingThree">
+                  <div class="accordion-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quo laboriosam, eveniet aliquam molestiae quas fugiat dolor deserunt? Aperiam itaque autem vero praesentium fugiat excepturi velit vitae repellat, natus aliquid.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseFour">
+                    Can i get discounts while renting?
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingFour">
+                  <div class="accordion-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quo laboriosam, eveniet aliquam molestiae quas fugiat dolor deserunt? Aperiam itaque autem vero praesentium fugiat excepturi velit vitae repellat, natus aliquid.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseFive">
+                    What informations should i need to provide when booking?
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingFive">
+                  <div class="accordion-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quo laboriosam, eveniet aliquam molestiae quas fugiat dolor deserunt? Aperiam itaque autem vero praesentium fugiat excepturi velit vitae repellat, natus aliquid.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseSix">
+                    What’s your refund policy?
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingSix">
+                  <div class="accordion-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quo laboriosam, eveniet aliquam molestiae quas fugiat dolor deserunt? Aperiam itaque autem vero praesentium fugiat excepturi velit vitae repellat, natus aliquid.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseSeven">
+                    How is rent charge determined?
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingSeven">
+                  <div class="accordion-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quo laboriosam, eveniet aliquam molestiae quas fugiat dolor deserunt? Aperiam itaque autem vero praesentium fugiat excepturi velit vitae repellat, natus aliquid.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="panelsStayOpen-headingEight">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseEight">
+                    Where is your shop located?
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingEight">
+                  <div class="accordion-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quo laboriosam, eveniet aliquam molestiae quas fugiat dolor deserunt? Aperiam itaque autem vero praesentium fugiat excepturi velit vitae repellat, natus aliquid.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr>
+            </div>
+
+          </div>
+        </main>
+        <div class="inquiry-item col-md-4">
+          <h3 class="section-title mb-3">Ask us anything</h3>
+          <p>Call Us +213 123 456 789 or just drop us your message at <a
+              href="mailto:contact@GoRental.com">contact@GoRental.com</a>. You can directly message us. </p>
+          <form id="form" class="form-group flex-wrap">
+            <div class="form-input col-lg-12 d-flex mb-3">
+              <input type="text" name="email" placeholder="Write Your Name Here" class="form-control ps-3 me-3">
+              <input type="text" name="email" placeholder="Write Your Email Here" class="form-control ps-3">
+            </div>
+            <div class="col-lg-12 mb-3">
+              <input type="text" name="email" placeholder="Phone Number" class="form-control ps-3">
+            </div>
+            <div class="col-lg-12 mb-3">
+              <input type="text" name="email" placeholder="Write Your Subject Here" class="form-control ps-3">
+            </div>
+            <div class="col-lg-12 mb-3">
+              <textarea placeholder="Write Your Message Here" class="form-control ps-3" rows="8"></textarea>
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-primary btn-lg text-uppercase btn-rounded-none">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- services section start  -->
+  <section id="services">
+
+    <div class="container  py-5 my-5">
+      <div class="row py-5 ">
+        <div class=" pb-5  col-10 col-sm-8 col-lg-6">
+          <h2 class="">See <span class="text-primary">best services</span> for your solution </h2>
+        </div>
+        <div class=" pb-5  col-lg-6">
+          <p class="pt-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium soluta sed ipsa ullam delectus dolore tenetur fugit, nemo maxime voluptatibus debitis quaerat laborum nesciunt ea libero temporibus repellat unde sit?
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="service-2">
+    <div class=" services-sub container mb-5 pb-5">
+      <div class="row">
+        <div class=" mt-4 col-6 col-lg-3">
+          <div class="services-components text-center pt-4 pb-3">
+            <iconify-icon class="services-icon my-2" icon="solar:shield-check-outline"></iconify-icon>
+            <h5>Secured Payment</h5>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class=" mt-4 col-6 col-lg-3">
+          <div class="services-components text-center pt-4 pb-3">
+            <iconify-icon class="services-icon my-2" icon="solar:bookmark-opened-outline"></iconify-icon>
+            <h5>any class vehicle</h5>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class=" mt-4 col-6 col-lg-3">
+          <div class="services-components text-center pt-4 pb-3">
+            <iconify-icon class="services-icon my-2" icon="solar:user-circle-outline"></iconify-icon>
+            <h5>Car sharing options</h5>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class=" mt-4 col-6 col-lg-3">
+          <div class="services-components text-center pt-4 pb-3">
+            <iconify-icon class="services-icon my-2" icon="solar:call-chat-outline"></iconify-icon>
+            <h5>Help center & Support</h5>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- blog section start  -->
+  <section id="blog">
+
+    <div class="container  py-5 my-5">
+      <div class="row py-5 ">
+        <div class="  pt-3 col-10 col-sm-8 col-lg-5">
+          <h2 class="">Our <span class="text-primary">Recent Posts</span> </h2>
+          <a href="blog.html" class="btn btn-primary mt-4">Read Blogs </a>
+
+
+
+        </div>
+        <div class=" mt-5 mt-lg-0 col-lg-7">
+          <div class=" pt-3 d-flex">
+            <div class="">
+              <h3>Jan 2 <br> 2023</h3>
+            </div>
+            <div class="ms-5">
+              <p>Tips</p>
+              <a href="single-post.html" class="blog-title">Safest car rental services in 2024</a>
+            </div>
+          </div>
+          <hr>
+          <div class=" pt-3 d-flex">
+            <div class="">
+              <h3>Jan 5<br> 2023</h3>
+            </div>
+            <div class="ms-5">
+              <p>Rental</p>
+              <a href="single-post.html" class="blog-title">Best car collection in the world</a>
+            </div>
+          </div>
+          <hr>
+          <div class=" pt-3 d-flex">
+            <div class="">
+              <h3>Jan 8 <br> 2023</h3>
+            </div>
+            <div class="ms-5">
+              <p>Tricks</p>
+              <a href="single-post.html" class="blog-title">Which car is the best for travel</a>
+            </div>
+          </div>
+          <hr>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+ <!-- call-to-action section start  -->
+ <section id="action" class="position-relative">
+
+  <div class="pattern-overlay pattern-right position-absolute">
+      <img src="images/call-to-action-pattern.png" alt="pattern">
+  </div>
+
+  <div class="container  py-5 my-5">
+      <div class="row py-5 ">
+          <div class=" col-10 col-sm-8 col-lg-6">
+              <h2 class="">Let’s begin with <span class="text-primary">GoRental rental.</span> </h2>
+          </div>
+          <div class=" col-lg-6">
+              <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla incidunt sunt temporibus vero sequi laudantium, sint, quae, repellendus officia inventore ullam. Blanditiis sunt natus ipsum quasi voluptatem rerum et. Voluptates.
+              </p>
+              <a href="contact.html" class="btn btn-primary mt-2">Contact us </a>
+          </div>
+      </div>
+
+  </div>
+
+</section>
+
+<!-- Footer Section Starts -->
+<section id="footer">
+  <div class="container footer-container mt-5">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
+
+          <div class=" col-md-4 mt-5 mt-md-0 ">
+              <img src="images/logo.png" alt="image">
+              <p class="py-3">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate cumque consequuntur facere eveniet!
+              </p>
+              <div class="d-flex align-items-center ">
+                  <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                          icon="mdi:facebook"></iconify-icon></a>
+                  <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                          icon="mdi:twitter"></iconify-icon></a>
+                  <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                          icon="mdi:instagram"></iconify-icon></a>
+                  <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                          icon="mdi:linkedin"></iconify-icon></a>
+                  <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                          icon="mdi:youtube"></iconify-icon></a>
+              </div>
+
+          </div>
+
+          <div class="col-md-7 offset-md-1 mt-5">
+              <ul class="footer-nav list-unstyled">
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="about.html">About</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="blog.html">Blog</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="cars.html">Cars</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="booking.html">Booking</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="services.html">Services</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="pricing.html">Pricing</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="contact.html">Contact</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="team.html">Team</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="review.html">Reviews</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="faq.html">FAQs</a></li>
+              </ul>
+          </div>
+
+      </footer>
+  </div>
+
+
+
+  <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
+
+  <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 pt-4">
+          <div class="col-md-6 d-flex align-items-center">
+              <p>© 2024 GoRental - All rights reserved</p>
+
+          </div>
+          <div class="col-md-6 d-flex align-items-center justify-content-end">
+              <p class="">© 2024 Copyright By:<a href="#" class="website-link" target="_blank">
+                      <b><u>GoRental</u></b></a></p>
+          </div>
+
+      </footer>
+  </div>
+</section>
+
+
+  <!-- script ================================================== -->
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+</body>
+
+</html>

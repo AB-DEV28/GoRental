@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoRental</title>
+
+  <!--vendor css ================================================== -->
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!--Bootstrap ================================================== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+  <!-- Style Sheet ================================================== -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Google Fonts ================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Raleway:wght@400;700&display=swap"
+    rel="stylesheet">
+
+
+  <!-- script ================================================== -->
+  <script src="js/modernizr.js"></script>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
+
+  <nav class="navbar navbar-expand-lg  navbar-light container-fluid py-3 position-fixed ">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav align-items-center justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link px-3" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="cars.html">Cars</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="#action">Contact</a>
+            </li>
+            <li class="nav-item dropdown text-center">
+              <a class="nav-link px-3 dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false" href="#">Pages <iconify-icon
+                  icon="material-symbols:arrow-drop-down"></iconify-icon></a>
+              <ul class="dropdown-menu">
+                <li><a href="about.html" class="dropdown-item text-uppercase ">About</a></li>
+                <li><a href="booking.html" class="dropdown-item text-uppercase ">Booking</a></li>
+                <li><a href="contact.html" class="dropdown-item text-uppercase ">Contact</a></li>
+                <li><a href="team.html" class="dropdown-item text-uppercase ">Our Team</a></li>
+                <li><a href="review.html" class="dropdown-item text-uppercase ">Reviews</a></li>
+                <li><a href="faq.html" class="dropdown-item text-uppercase ">FAQs</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="d-flex mt-5 mt-lg-0 ps-xl-5 align-items-center justify-content-center ">
+            <ul class="navbar-nav justify-content-end align-items-center">
+              <li class="nav-item">
+                <a class="nav-link px-3" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Login </a>
+              </li>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="tabs-listing">
+                        <nav>
+                          <div class="nav nav-tabs d-flex justify-content-center border-0" id="nav-tab" role="tablist">
+                            <button class="btn btn-outline-primary text-uppercase me-3 active" id="nav-sign-in-tab"
+                              data-bs-toggle="tab" data-bs-target="#nav-sign-in" type="button" role="tab"
+                              aria-controls="nav-sign-in" aria-selected="true">Log
+                              In</button>
+                            <button class="btn btn-outline-primary text-uppercase" id="nav-register-tab"
+                              data-bs-toggle="tab" data-bs-target="#nav-register" type="button" role="tab"
+                              aria-controls="nav-register" aria-selected="false">Sign
+                              Up</button>
+                          </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                          <div class="tab-pane fade active show" id="nav-sign-in" role="tabpanel"
+                            aria-labelledby="nav-sign-in-tab">
+                            <form id="form1" class="form-group flex-wrap p-3 ">
+                              <div class="form-input col-lg-12 my-4">
+                                <label for="exampleInputEmail1"
+                                  class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                                  Address</label>
+                                <input type="text" id="exampleInputEmail1" name="email" placeholder="Email"
+                                  class="form-control ps-3">
+                              </div>
+                              <div class="form-input col-lg-12 my-4">
+                                <label for="inputPassword1"
+                                  class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
+                                <input type="password" id="inputPassword1" placeholder="Password"
+                                  class="form-control ps-3" aria-describedby="passwordHelpBlock">
+                                <div id="passwordHelpBlock" class="form-text text-center">
+                                  <a href="#" class=" password">Forgot Password ?</a>
+                                </div>
+
+                              </div>
+                              <label class="py-3">
+                                <input type="checkbox" required="" class="d-inline">
+                                <span class="label-body text-black">Remember Me</span>
+                              </label>
+                              <div class="d-grid my-3">
+                                <button class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Log
+                                  In</button>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="tab-pane fade" id="nav-register" role="tabpanel"
+                            aria-labelledby="nav-register-tab">
+                            <form id="form2" class="form-group flex-wrap p-3 ">
+                              <div class="form-input col-lg-12 my-4">
+                                <label for="exampleInputEmail2"
+                                  class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                                  Address</label>
+                                <input type="text" id="exampleInputEmail2" name="email" placeholder="Email"
+                                  class="form-control ps-3">
+                              </div>
+                              <div class="form-input col-lg-12 my-4">
+                                <label for="inputPassword2"
+                                  class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
+                                <input type="password" id="inputPassword2" placeholder="Password"
+                                  class="form-control ps-3" aria-describedby="passwordHelpBlock">
+                              </div>
+                              <label class="py-3">
+                                <input type="checkbox" required="" class="d-inline">
+                                <span class="label-body text-black">I agree to the <a href="#"
+                                    class="text-black password border-bottom">Privacy
+                                    Policy</a>
+                                </span>
+                              </label>
+                              <div class="d-grid my-3">
+                                <button
+                                  class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Sign
+                                  Up</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ul>
+            <button type="button" class="btn btn-outline-primary nav-button mx-3" data-bs-toggle="modal"
+              data-bs-target="#exampleModal2"> Sign in </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="tabs-listing">
+                      <nav>
+                        <div class="nav nav-tabs d-flex justify-content-center border-0" id="nav-tab2" role="tablist">
+                          <button class="btn btn-outline-primary text-uppercase me-4 " id="nav-sign-in-tab2"
+                            data-bs-toggle="tab" data-bs-target="#nav-sign-in2" type="button" role="tab"
+                            aria-controls="nav-sign-in2" aria-selected="false">Log
+                            In</button>
+                          <button class="btn btn-outline-primary text-uppercase active" id="nav-register-tab2"
+                            data-bs-toggle="tab" data-bs-target="#nav-register2" type="button" role="tab"
+                            aria-controls="nav-register2" aria-selected="true">Sign
+                            Up</button>
+                        </div>
+                      </nav>
+                      <div class="tab-content" id="nav-tabContent1">
+                        <div class="tab-pane fade " id="nav-sign-in2" role="tabpanel"
+                          aria-labelledby="nav-sign-in-tab2">
+                          <form id="form3" class="form-group flex-wrap p-3 ">
+                            <div class="form-input col-lg-12 my-4">
+                              <label for="exampleInputEmail3"
+                                class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                                Address</label>
+                              <input type="text" id="exampleInputEmail3" name="email" placeholder="Email"
+                                class="form-control ps-3">
+                            </div>
+                            <div class="form-input col-lg-12 my-4">
+                              <label for="inputPassword3"
+                                class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
+                              <input type="password" id="inputPassword3" placeholder="Password"
+                                class="form-control ps-3" aria-describedby="passwordHelpBlock">
+                              <div id="passwordHelpBlock2" class="form-text text-center">
+                                <a href="#" class=" password">Forgot Password ?</a>
+                              </div>
+
+                            </div>
+                            <label class="py-3">
+                              <input type="checkbox" required="" class="d-inline">
+                              <span class="label-body text-black">Remember Me</span>
+                            </label>
+                            <div class="d-grid my-3">
+                              <button class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Log
+                                In</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="tab-pane fade active show" id="nav-register2" role="tabpanel"
+                          aria-labelledby="nav-register-tab2">
+                          <form id="form4" class="form-group flex-wrap p-3 ">
+                            <div class="form-input col-lg-12 my-4">
+                              <label for="exampleInputEmail4"
+                                class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                                Address</label>
+                              <input type="text" id="exampleInputEmail4" name="email" placeholder="Email"
+                                class="form-control ps-3">
+                            </div>
+                            <div class="form-input col-lg-12 my-4">
+                              <label for="inputPassword4"
+                                class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
+                              <input type="password" id="inputPassword4" placeholder="Password"
+                                class="form-control ps-3" aria-describedby="passwordHelpBlock">
+                            </div>
+                            <label class="py-3">
+                              <input type="checkbox" required="" class="d-inline">
+                              <span class="label-body text-black">I agree to the <a href="#"
+                                  class="text-black password border-bottom">Privacy
+                                  Policy</a>
+                              </span>
+                            </label>
+                            <div class="d-grid my-3">
+                              <button class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Sign
+                                Up</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- hero section start  -->
+  <section id="hero" class=" position-relative overflow-hidden">
+    <div class="pattern-overlay pattern-right position-absolute">
+      <img src="images/hero-pattern-right.png" alt="pattern">
+    </div>
+    <div class="pattern-overlay pattern-left position-absolute">
+      <img src="images/hero-pattern-left.png" alt="pattern">
+    </div>
+    <div class=" hero-content container text-center">
+      <div class="row">
+        <div class="d-flex flex-wrap flex-column justify-content-center align-items-center">
+          <h2 class="page-title display-3 mt-5">Things to remember while renting car</h2>
+          <nav class="breadcrumb">
+            <a class="breadcrumb-item" href="index.html">Home</a>
+            <span class="breadcrumb-item active" aria-current="page">Single-Post</span>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-wrap py-5 no-padding-bottom">
+    <div class="container">
+      <div class="row g-5 mt-4">
+        <main class="post-grid col-md-9">
+          <div class="row">
+            <article class="post-item">
+              <div class="hero-image">
+                <img src="images/banner-img.jpg" alt="single-post" class="img-fluid">
+              </div>
+              <div class="post-content py-5">
+                <div class="post-description">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugit minima eum quae ducimus iure quasi porro ipsa blanditiis vitae. Voluptatum unde velit, doloremque ad optio minima ullam? Ipsum, dignissimos?
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, suscipit? Deleniti ipsa accusamus dignissimos necessitatibus ullam perferendis ab itaque vel reprehenderit veniam, blanditiis quas, tempore laudantium inventore consequuntur? Voluptate, necessitatibus?
+                  </p>
+                  <blockquote>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est officia repellat porro tenetur commodi ducimus voluptas impedit perspiciatis eos magni facere perferendis, officiis placeat amet delectus possimus dolorum numquam iure.
+                  </blockquote>
+                  <h4>It would be easy to live</h4>
+                  <ul class="inner-list">
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                  </ul>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id fugit saepe voluptates quo ullam magnam rem ratione reiciendis! Ducimus nulla dolores veniam minima atque obcaecati facere, voluptatem mollitia veritatis cupiditate!
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quia mollitia. Ad vero at modi quisquam provident doloribus. Accusamus distinctio nam nihil id eius rem quia ratione porro amet debitis?
+                  </p>
+                  <div class="row my-4">
+                    <div class="col-md-6">
+                      <img src="images/blog3.jpg" alt="post-image" class=" img-fluid align-left">
+                      <h5 class="text-center mt-3">Velit, praesent pharetra malesuada</h5>
+                    </div>
+                    <div class="col-md-6">
+                      <img src="images/blog5.jpg" alt="post-image" class=" img-fluid align-right">
+                      <h5 class="text-center mt-3">Velit, praesent pharetra malesuada</h5>
+                    </div>
+                  </div>
+
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est similique voluptate, voluptates laboriosam iste, accusantium excepturi hic tempore consequuntur consequatur nobis delectus accusamus neque perferendis, cumque soluta! Vero, rerum fugit?
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi cumque ipsam libero recusandae. Quo repellendus, magnam nam laborum molestiae sed adipisci saepe consectetur, repellat pariatur facere, architecto illo atque hic?
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. In ab eum vitae nesciunt voluptate! Voluptatibus earum aut enim pariatur, ex perspiciatis ducimus totam accusamus, magni, velit hic? Omnis, necessitatibus provident.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quis natus incidunt ex, consectetur, nisi inventore velit culpa quibusdam vitae nulla atque vel quas commodi porro. Odio tenetur magnam quis.
+                  </p>
+                  <div class="post-bottom-link d-md-flex justify-content-between my-5">
+                    <div class="block-tag">
+                      <ul class="list-unstyled text-decoration-underline d-flex ">
+                        <li class="me-3">
+                          <a href="#">Cars</a>
+                        </li>
+                        <li class="me-3">
+                          <a href="#">Bus</a>
+                        </li>
+                        <li class="me-3">
+                          <a href="#">Cargo-truck</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="block-social-links d-flex">
+                      <div class="element-title text-uppercase pe-4">Share:</div>
+                      <ul class="list-unstyled d-flex gap-3 m-0 ">
+                        <li>
+                          <a href="#" class="text-secondary p-0">
+                            <iconify-icon icon="ri:facebook-fill" class="social-icon "></iconify-icon>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="text-secondary p-0">
+                            <iconify-icon icon="ri:instagram-line" class="social-icon "></iconify-icon>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="text-secondary p-0">
+                            <iconify-icon icon="ri:twitter-fill" class="social-icon "></iconify-icon>
+
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="text-secondary p-0">
+                            <iconify-icon icon="ri:youtube-fill" class="social-icon "></iconify-icon>
+
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="text-secondary p-0">
+                            <iconify-icon icon="ri:linkedin-fill" class="social-icon "></iconify-icon>
+
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div id="single-post-navigation">
+                  <div class="post-navigation d-flex justify-content-between">
+                    <a itemprop="url" class="post-prev" href="#">
+                      <iconify-icon icon="solar:arrow-left-linear" class="pagination-arrow"></iconify-icon>
+                      <span class="page-nav-title text-uppercase ms-2">How to take care of your cars</span>
+                    </a>
+                    <a itemprop="url" class="post-next" href="#">
+                      <span class="page-nav-title text-uppercase me-2">Summer tips for truck owners</span>
+                      <iconify-icon icon="solar:arrow-right-linear" class="pagination-arrow"></iconify-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <div id="post-author-info" class="border-top border-bottom py-4">
+              <div class="row d-flex align-items-center">
+                <div class="col-md-3">
+                  <div class="image-holder">
+                    <a itemprop="url" href="#">
+                      <img src="images/blog9.jpg" class="img-fluid" alt="author">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="post-author-content">
+                    <div class="element-title text-uppercase mt-3">
+                      <a itemprop="url" href="#">James Younes</a>
+                    </div>
+                    <span class="author-position my-3">Car Renter</span>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid suscipit ipsum delectus nisi id cupiditate distinctio eius repellendus, minima pariatur facilis, dicta ducimus nobis labore iste corrupti atque fugiat veritatis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section id="post-comment">
+              <div class="container">
+                <div class="row my-5">
+                  <div class="comments-wrap">
+                    <h4 class="text-uppercase mb-5">
+                      <span class="count">3</span> Comments
+                    </h4>
+                    <div class="comment-list">
+                      <article class="comment-item pb-3 row">
+                        <div class="col-md-2">
+                          <img src="images/commentor-item1.jpg" alt="default"
+                            class="commentor-image img-fluid rounded-circle">
+                        </div>
+                        <div class="col-md-10">
+                          <div class="author-post mb-4">
+                            <div class="comment-meta mt-3 mt-md-0 text-uppercase d-flex gap-3 text-black">
+                              <div class="author-name fw-bold">Lufy carlson</div>
+                              <span class="meta-date">Jul 10</span>
+                            </div>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur minus cupiditate repellat provident fugiat. Enim vel voluptatem quae aliquid odit unde iure fugit quis nulla commodi rerum, soluta a deleniti.</p>
+                            <div class="comments-reply border-animation">
+                              <a href="#">
+                                <i class="icon icon-mail-reply"></i>Reply </a>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="comment-item pb-3 row child-comments">
+                        <div class="col-md-2">
+                          <img src="images/commentor-item2.jpg" alt="default"
+                            class="commentor-image img-fluid rounded-circle">
+                        </div>
+                        <div class="col-md-10">
+                          <div class="author-post mb-4">
+                            <div class="comment-meta mt-3 mt-md-0 text-uppercase d-flex gap-3 text-black ">
+                              <div class="author-name fw-bold">Lora leigh</div>
+                              <span class="meta-date">Jul 10</span>
+                            </div>
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo suscipit in voluptate mollitia eum laboriosam laborum nesciunt commodi consequatur rerum necessitatibus veniam distinctio odio, fugit fugiat reprehenderit maiores eveniet itaque?
+                            </p>
+                            <div class="comments-reply border-animation">
+                              <a href="#">
+                                <i class="icon icon-mail-reply"></i>Reply </a>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="comment-item pb-3 row">
+                        <div class="col-md-2">
+                          <img src="images/commentor-item3.jpg" alt="default"
+                            class="commentor-image img-fluid rounded-circle">
+                        </div>
+                        <div class="col-md-10">
+                          <div class="author-post mb-4">
+                            <div class="comment-meta mt-3 mt-md-0 text-uppercase d-flex gap-3 text-black ">
+                              <div class="author-name fw-bold">Natalie dormer</div>
+                              <span class="meta-date">Jul 10</span>
+                            </div>
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit animi reiciendis velit facere dignissimos numquam obcaecati voluptatibus! Qui sed aut, magni, laboriosam soluta eveniet officia nihil quidem nisi neque exercitationem!
+                            </p>
+                            <div class="comments-reply border-animation">
+                              <a href="#">
+                                <i class="icon icon-mail-reply"></i>Reply </a>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="comment-respond my-5">
+                    <h4 class="text-uppercase">Leave a Comment</h4>
+                    <p>Your email address will not be published. Required fields are marked *</p>
+                    <form method="post" class="form-group padding-small">
+                      <div class="row">
+                        <div class="col-lg-12 mb-3">
+                          <textarea class="form-control ps-3 pt-3" id="comment" name="comment"
+                            placeholder="Write your comment here *"></textarea>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                          <input class="form-control ps-3" type="text" name="author" id="author"
+                            placeholder="Write your full name here *">
+                        </div>
+                        <div class="col-lg-6">
+                          <input class="form-control ps-3" type="email" name="email" id="email"
+                            placeholder="Write your e-mail address *">
+                        </div>
+                        <div class="col-lg-12">
+                          <label class="d-flex align-items-center">
+                            <input type="checkbox" class="checked-box me-2">
+                            <span class="label-body">Save my name, email, and website in this browser for the next
+                              time.</span>
+                          </label>
+                        </div>
+                        <div class="col-lg-12 mt-3">
+                          <button class="btn btn-lg btn-primary text-uppercase btn-rounded-none w-100"
+                            type="submit">Post Comment</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+        <aside class="col-md-3">
+          <div class="post-sidebar">
+            <form role="search" method="get" action="" class="mb-5">
+              <div class="wp-block-search d-flex border p-2">
+                <input type="search" class="form-control border-0 focus-ring-light" name="s" value=""
+                  placeholder="Search" required="">
+                <button type="submit" class="border-0 bg-transparent"> <iconify-icon
+                    icon="ic:baseline-search"></iconify-icon> </button>
+              </div>
+            </form>
+            <div class="widget sidebar-categories border-animation-left mb-5">
+              <h5 class="widget-title text-uppercase border-bottom pb-3 mb-3">Categories</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#" class="item-anchor">All</a>
+                </li>
+                <li>
+                  <a href="#" class="item-anchor">Bike</a>
+                </li>
+                <li>
+                  <a href="#" class="item-anchor">Car</a>
+                </li>
+                <li>
+                  <a href="#" class="item-anchor">Bus</a>
+                </li>
+                <li>
+                  <a href="#" class="item-anchor">Mini-van</a>
+                </li>
+                <li>
+                  <a href="#" class="item-anchor">Truck</a>
+                </li>
+                <li>
+                  <a href="#" class="item-anchor">Cargo</a>
+                </li>
+              </ul>
+            </div>
+            <div class="widget block-tag mb-5">
+              <h5 class="widget-title text-uppercase border-bottom pb-3 mb-3">Tags</h5>
+              <ul class="list-unstyled d-flex flex-wrap gap-2">
+                <li>
+                  <a href="#" class="btn btn-outline-secondary">Car Rent</a>
+                </li>
+                <li>
+                  <a href="#" class="btn btn-outline-secondary">Renting</a>
+                </li>
+                <li>
+                  <a href="#" class="btn btn-outline-secondary">Cleaning</a>
+                </li>
+                <li>
+                  <a href="#" class="btn btn-outline-secondary">Modify</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="widget sidebar-recent-post mb-5">
+              <h5 class="widget-title text-uppercase border-bottom pb-3 mb-3">Recent Posts</h5>
+              <div class="sidebar-post-item d-flex justify-content-center">
+                <div class="row">
+                  <div class="col-md-4 mb-2">
+                    <div class="image-holder">
+                      <a href="#">
+                        <img src="images/blog2.jpg" alt="blog" class="img-fluid">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="sidebar-post-content text-uppercase">
+                      <div class="post-meta fs-6 text-secondary">
+                        <span class="meta-date">jul 11, 2024</span>
+                      </div>
+                      <h6 class="post-title">
+                        <a href="#">How to ride car properly</a>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sidebar-post-item d-flex justify-content-center">
+                <div class="row">
+                  <div class="col-md-4 mb-2">
+                    <div class="image-holder">
+                      <a href="#">
+                        <img src="images/blog7.jpg" alt="blog" class="img-fluid">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="sidebar-post-content text-uppercase">
+                      <div class="post-meta fs-6 text-secondary">
+                        <span class="meta-date">jul 18, 2024</span>
+                      </div>
+                      <h6 class="post-title">
+                        <a href="#">Top 10 hacks for renting car </a>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sidebar-post-item d-flex justify-content-center">
+                <div class="row">
+                  <div class="col-md-4 mb-2">
+                    <div class="image-holder">
+                      <a href="#">
+                        <img src="images/blog5.jpg" alt="blog" class="img-fluid">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="sidebar-post-content text-uppercase">
+                      <div class="post-meta fs-6 text-secondary">
+                        <span class="meta-date">Aug 21, 2024</span>
+                      </div>
+                      <h6 class="post-title">
+                        <a href="#">Best ways to rent car</a>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="widget sidebar-social-links border-animation-left">
+              <h5 class="widget-title text-uppercase border-bottom pb-3 mb-3">Follow us:</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#" class="item-anchor">Facebook</a>
+                </li>
+                <li>
+                  <a href="#" class="item-anchor">Twitter</a>
+                </li>
+                <li>
+                  <a href="#" class="item-anchor">Pinterest</a>
+                </li>
+                <li>
+                  <a href="#" class="item-anchor">Youtube</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <section class="related-post post-wrap py-4">
+    <div class="container">
+      <div class="section-header d-flex align-items-center justify-content-between">
+        <h2 class="section-title text-uppercase mb-5">Related Posts</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <article class="post-item pb-5">
+            <div class="post-image">
+              <a href="single-post.html"><img src="images/blog5.jpg" class="img-fluid"></a>
+            </div>
+            <div class="post-content">
+              <a href="#" class="text-decoration-none">
+                <p class="blog-topic text-uppercase mt-3">Cars / 12 jan, 2024</p>
+              </a>
+              <a href="single-post.html" class="text-decoration-none">
+                <h4 class="blog-title my-3">Things to remember while renting car</h4>
+              </a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, sapiente...</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="post-item pb-5">
+            <div class="post-image">
+              <a href="single-post.html"><img src="images/blog6.jpg" class="img-fluid"></a>
+            </div>
+            <div class="post-content">
+              <a href="#" class="text-decoration-none">
+                <p class="blog-topic text-uppercase mt-3">Cars / 12 jan, 2024</p>
+              </a>
+              <a href="single-post.html" class="text-decoration-none">
+                <h4 class="blog-title my-3">Things to remember while renting car</h4>
+              </a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, sapiente...</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="post-item pb-5">
+            <div class="post-image">
+              <a href="single-post.html"><img src="images/blog1.jpg" class="img-fluid"></a>
+            </div>
+            <div class="post-content">
+              <a href="#" class="text-decoration-none">
+                <p class="blog-topic text-uppercase mt-3">Cars / 12 jan, 2024</p>
+              </a>
+              <a href="single-post.html" class="text-decoration-none">
+                <h4 class="blog-title my-3">Things to remember while renting car</h4>
+              </a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, sapiente...</p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- call-to-action section start  -->
+  <section id="action" class="position-relative">
+
+    <div class="pattern-overlay pattern-right position-absolute">
+        <img src="images/call-to-action-pattern.png" alt="pattern">
+    </div>
+
+    <div class="container  py-5 my-5">
+        <div class="row py-5 ">
+            <div class=" col-10 col-sm-8 col-lg-6">
+                <h2 class="">Let’s begin with <span class="text-primary">GoRental rental.</span> </h2>
+            </div>
+            <div class=" col-lg-6">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla incidunt sunt temporibus vero sequi laudantium, sint, quae, repellendus officia inventore ullam. Blanditiis sunt natus ipsum quasi voluptatem rerum et. Voluptates.
+                </p>
+                <a href="contact.html" class="btn btn-primary mt-2">Contact us </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Footer Section Starts -->
+<section id="footer">
+    <div class="container footer-container mt-5">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
+
+            <div class=" col-md-4 mt-5 mt-md-0 ">
+                <img src="images/logo.png" alt="image">
+                <p class="py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate cumque consequuntur facere eveniet!
+                </p>
+                <div class="d-flex align-items-center ">
+                    <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                            icon="mdi:facebook"></iconify-icon></a>
+                    <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                            icon="mdi:twitter"></iconify-icon></a>
+                    <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                            icon="mdi:instagram"></iconify-icon></a>
+                    <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                            icon="mdi:linkedin"></iconify-icon></a>
+                    <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                            icon="mdi:youtube"></iconify-icon></a>
+                </div>
+
+            </div>
+
+            <div class="col-md-7 offset-md-1 mt-5">
+                <ul class="footer-nav list-unstyled">
+                    <li class="nav-item me-2 mb-3"><a class="nav-link px-4" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="about.html">About</a></li>
+                    <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="blog.html">Blog</a></li>
+                    <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="cars.html">Cars</a></li>
+                    <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="booking.html">Booking</a></li>
+                    <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="services.html">Services</a></li>
+                    <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="contact.html">Contact</a></li>
+                    <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="team.html">Team</a></li>
+                    <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="review.html">Reviews</a></li>
+                    <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="faq.html">FAQs</a></li>
+                </ul>
+            </div>
+
+        </footer>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 pt-4">
+            <div class="col-md-6 d-flex align-items-center">
+                <p>© 2024 GoRental - All rights reserved</p>
+
+            </div>
+            <div class="col-md-6 d-flex align-items-center justify-content-end">
+                <p class="">© 2024 Copyright By:<a href="#" class="website-link" target="_blank">
+                        <b><u>GoRental</u></b></a></p>
+            </div>
+
+        </footer>
+    </div>
+</section>
+
+
+  <!-- script ================================================== -->
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoRental</title>
+
+  <!--vendor css ================================================== -->
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!--Bootstrap ================================================== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+  <!-- Style Sheet ================================================== -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Google Fonts ================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Raleway:wght@400;700&display=swap"
+    rel="stylesheet">
+
+
+  <!-- script ================================================== -->
+  <script src="js/modernizr.js"></script>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
+
+  <nav class="navbar navbar-expand-lg  navbar-light container-fluid py-3 position-fixed ">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav align-items-center justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link px-3" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="cars.html">Cars</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="#blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="#action">Contact</a>
+            </li>
+            <li class="nav-item dropdown text-center">
+              <a class="nav-link px-3 dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false" href="#">Pages <iconify-icon
+                  icon="material-symbols:arrow-drop-down"></iconify-icon></a>
+              <ul class="dropdown-menu">
+                <li><a href="about.html" class="dropdown-item text-uppercase ">About</a></li>
+                <li><a href="blog.html" class="dropdown-item text-uppercase ">Blog</a></li>
+                <li><a href="booking.html" class="dropdown-item text-uppercase ">Booking</a></li>
+                <li><a href="services.html" class="dropdown-item text-uppercase ">Services</a></li>
+                <li><a href="contact.html" class="dropdown-item text-uppercase ">Contact</a></li>
+                <li><a href="team.html" class="dropdown-item text-uppercase ">Our Team</a></li>
+                <li><a href="review.html" class="dropdown-item text-uppercase ">Reviews</a></li>
+                <li><a href="faq.html" class="dropdown-item text-uppercase ">FAQs</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="d-flex mt-5 mt-lg-0 ps-xl-5 align-items-center justify-content-center ">
+            <ul class="navbar-nav justify-content-end align-items-center">
+              <li class="nav-item">
+                <a class="nav-link px-3" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Login </a>
+              </li>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="tabs-listing">
+                        <nav>
+                          <div class="nav nav-tabs d-flex justify-content-center border-0" id="nav-tab" role="tablist">
+                            <button class="btn btn-outline-primary text-uppercase me-3 active" id="nav-sign-in-tab"
+                              data-bs-toggle="tab" data-bs-target="#nav-sign-in" type="button" role="tab"
+                              aria-controls="nav-sign-in" aria-selected="true">Log
+                              In</button>
+                            <button class="btn btn-outline-primary text-uppercase" id="nav-register-tab"
+                              data-bs-toggle="tab" data-bs-target="#nav-register" type="button" role="tab"
+                              aria-controls="nav-register" aria-selected="false">Sign
+                              Up</button>
+                          </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                          <div class="tab-pane fade active show" id="nav-sign-in" role="tabpanel"
+                            aria-labelledby="nav-sign-in-tab">
+                            <form id="form1" class="form-group flex-wrap p-3 ">
+                              <div class="form-input col-lg-12 my-4">
+                                <label for="exampleInputEmail1"
+                                  class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                                  Address</label>
+                                <input type="text" id="exampleInputEmail1" name="email" placeholder="Email"
+                                  class="form-control ps-3">
+                              </div>
+                              <div class="form-input col-lg-12 my-4">
+                                <label for="inputPassword1"
+                                  class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
+                                <input type="password" id="inputPassword1" placeholder="Password"
+                                  class="form-control ps-3" aria-describedby="passwordHelpBlock">
+                                <div id="passwordHelpBlock" class="form-text text-center">
+                                  <a href="#" class=" password">Forgot Password ?</a>
+                                </div>
+
+                              </div>
+                              <label class="py-3">
+                                <input type="checkbox" required="" class="d-inline">
+                                <span class="label-body text-black">Remember Me</span>
+                              </label>
+                              <div class="d-grid my-3">
+                                <button class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Log
+                                  In</button>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="tab-pane fade" id="nav-register" role="tabpanel"
+                            aria-labelledby="nav-register-tab">
+                            <form id="form2" class="form-group flex-wrap p-3 ">
+                              <div class="form-input col-lg-12 my-4">
+                                <label for="exampleInputEmail2"
+                                  class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                                  Address</label>
+                                <input type="text" id="exampleInputEmail2" name="email" placeholder="Email"
+                                  class="form-control ps-3">
+                              </div>
+                              <div class="form-input col-lg-12 my-4">
+                                <label for="inputPassword2"
+                                  class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
+                                <input type="password" id="inputPassword2" placeholder="Password"
+                                  class="form-control ps-3" aria-describedby="passwordHelpBlock">
+                              </div>
+                              <label class="py-3">
+                                <input type="checkbox" required="" class="d-inline">
+                                <span class="label-body text-black">I agree to the <a href="#"
+                                    class="text-black password border-bottom">Privacy
+                                    Policy</a>
+                                </span>
+                              </label>
+                              <div class="d-grid my-3">
+                                <button
+                                  class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Sign
+                                  Up</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ul>
+            <button type="button" class="btn btn-outline-primary nav-button mx-3" data-bs-toggle="modal"
+              data-bs-target="#exampleModal2"> Sign in </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="tabs-listing">
+                      <nav>
+                        <div class="nav nav-tabs d-flex justify-content-center border-0" id="nav-tab2" role="tablist">
+                          <button class="btn btn-outline-primary text-uppercase me-4 " id="nav-sign-in-tab2"
+                            data-bs-toggle="tab" data-bs-target="#nav-sign-in2" type="button" role="tab"
+                            aria-controls="nav-sign-in2" aria-selected="false">Log
+                            In</button>
+                          <button class="btn btn-outline-primary text-uppercase active" id="nav-register-tab2"
+                            data-bs-toggle="tab" data-bs-target="#nav-register2" type="button" role="tab"
+                            aria-controls="nav-register2" aria-selected="true">Sign
+                            Up</button>
+                        </div>
+                      </nav>
+                      <div class="tab-content" id="nav-tabContent1">
+                        <div class="tab-pane fade " id="nav-sign-in2" role="tabpanel"
+                          aria-labelledby="nav-sign-in-tab2">
+                          <form id="form3" class="form-group flex-wrap p-3 ">
+                            <div class="form-input col-lg-12 my-4">
+                              <label for="exampleInputEmail3"
+                                class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                                Address</label>
+                              <input type="text" id="exampleInputEmail3" name="email" placeholder="Email"
+                                class="form-control ps-3">
+                            </div>
+                            <div class="form-input col-lg-12 my-4">
+                              <label for="inputPassword3"
+                                class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
+                              <input type="password" id="inputPassword3" placeholder="Password"
+                                class="form-control ps-3" aria-describedby="passwordHelpBlock">
+                              <div id="passwordHelpBlock2" class="form-text text-center">
+                                <a href="#" class=" password">Forgot Password ?</a>
+                              </div>
+
+                            </div>
+                            <label class="py-3">
+                              <input type="checkbox" required="" class="d-inline">
+                              <span class="label-body text-black">Remember Me</span>
+                            </label>
+                            <div class="d-grid my-3">
+                              <button class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Log
+                                In</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="tab-pane fade active show" id="nav-register2" role="tabpanel"
+                          aria-labelledby="nav-register-tab2">
+                          <form id="form4" class="form-group flex-wrap p-3 ">
+                            <div class="form-input col-lg-12 my-4">
+                              <label for="exampleInputEmail4"
+                                class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                                Address</label>
+                              <input type="text" id="exampleInputEmail4" name="email" placeholder="Email"
+                                class="form-control ps-3">
+                            </div>
+                            <div class="form-input col-lg-12 my-4">
+                              <label for="inputPassword4"
+                                class="form-label  fs-6 text-uppercase fw-bold text-black">Password</label>
+                              <input type="password" id="inputPassword4" placeholder="Password"
+                                class="form-control ps-3" aria-describedby="passwordHelpBlock">
+                            </div>
+                            <label class="py-3">
+                              <input type="checkbox" required="" class="d-inline">
+                              <span class="label-body text-black">I agree to the <a href="#"
+                                  class="text-black password border-bottom">Privacy
+                                  Policy</a>
+                              </span>
+                            </label>
+                            <div class="d-grid my-3">
+                              <button class="btn btn-primary btn-lg btn-dark text-uppercase btn-rounded-none fs-6">Sign
+                                Up</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- hero section start  -->
+  <section id="hero" class=" position-relative overflow-hidden">
+    <div class="pattern-overlay pattern-right position-absolute">
+      <img src="images/hero-pattern-right.png" alt="pattern">
+    </div>
+    <div class="pattern-overlay pattern-left position-absolute">
+      <img src="images/hero-pattern-left.png" alt="pattern">
+    </div>
+    <div class="container py-5 mt-5">
+      <div class="row my-5">
+        <h2 class="mt-5">BMW x3</h2>
+
+        <div class="d-flex ">
+          <p class="fs-5 ">Lectus adipiscing est auctor</p>
+          <p style="color: #F8D047">&nbsp; | &nbsp;</p>
+          <p class=" fs-5 fw-semibold"> For Rent </p>
+          <p style="color: #F8D047">&nbsp; | &nbsp;</p>
+          <p class=" fs-5 fw-semibold"> Price : $9000 / day</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-wrap  no-padding-bottom">
+    <div class="container">
+
+      <div class="row my-5 g-5">
+        <main class="post-grid col-md-9">
+          <div class="row">
+            <article class="property">
+
+              <div class="row flex-column">
+                <div class="col-md-12">
+                  <!-- product-large-slider -->
+                  <div class="swiper product-large-slider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="images/item-large8.jpg" alt="product-large" class="img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/item-large5.jpg" alt="product-large" class="img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/item-large4.jpg" alt="product-large" class="img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/item-large9.jpg" alt="product-large" class="img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/item-large1.jpg" alt="product-large" class="img-fluid">
+                      </div>
+
+                    </div>
+                  </div>
+                  <!-- / product-large-slider -->
+                </div>
+                <div class="col-md-12 mt-2">
+                  <!-- product-thumbnail-slider -->
+                  <div thumbsSlider="" class="swiper product-thumbnail-slider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="images/blog8.jpg" alt="image" class="thumb-image img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/blog5.jpg" alt="image" class="thumb-image img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/blog4.jpg" alt="image" class="thumb-image img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/blog9.jpg" alt="image" class="thumb-image img-fluid">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/blog1.jpg" alt="image" class="thumb-image img-fluid">
+                      </div>
+
+                    </div>
+                  </div>
+                  <!-- / product-thumbnail-slider -->
+                </div>
+
+              </div>
+
+              <div class="post-content py-5">
+
+                <div class="overview my-5">
+                  <h3 class="fs-2 mb-4">Vehicle Overview</h3>
+
+                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-1">
+                    <div class="col d-flex align-items-start">
+                      <iconify-icon icon="fa-solid:car" class="property-icon border rounded-2 p-3"></iconify-icon>
+                      <div class="ms-4 mt-2">
+                        <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">Body</h6>
+                        <p>BMW x3</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <iconify-icon icon="healthicons:clean-hands"
+                        class="property-icon border rounded-2 p-3"></iconify-icon>
+                      <div class="ms-4 mt-2">
+                        <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">Make</h6>
+                        <p>BMW</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <iconify-icon icon="fluent:transmission-20-filled"
+                        class="property-icon border rounded-2 p-3"></iconify-icon>
+                      <div class="ms-4 mt-2">
+                        <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">Transmission</h6>
+                        <p>Automatic</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <iconify-icon icon="bi:fuel-pump" class="property-icon border rounded-2 p-3"></iconify-icon>
+                      <div class="ms-4 mt-2">
+                        <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">Fuel Type</h6>
+                        <p>Diesel</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <iconify-icon icon="material-symbols:speed-outline"
+                        class="property-icon border rounded-2 p-3"></iconify-icon>
+                      <div class="ms-4 mt-2">
+                        <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">Mileage</h6>
+                        <p>16 Km</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <iconify-icon icon="mdi:steering" class="property-icon border rounded-2 p-3"></iconify-icon>
+                      <div class="ms-4 mt-2">
+                        <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">Drivetrian</h6>
+                        <p>Front Wheel
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <iconify-icon icon="raphael:acw" class="property-icon border rounded-2 p-3"></iconify-icon>
+                      <div class="ms-4 mt-2">
+                        <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">AC</h6>
+                        <p>Air Condition</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <iconify-icon icon="solar:calendar-linear"
+                        class="property-icon border rounded-2 p-3"></iconify-icon>
+                      <div class="ms-4 mt-2">
+                        <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">Year</h6>
+                        <p>2018</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <iconify-icon icon="game-icons:car-door"
+                        class="property-icon border rounded-2 p-3"></iconify-icon>
+                      <div class="ms-4 mt-2">
+                        <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">Door</h6>
+                        <p>4 Doors</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <iconify-icon icon="mdi:car-brake-worn-linings"
+                        class="property-icon border rounded-2 p-3"></iconify-icon>
+                      <div class="ms-4 mt-2">
+                        <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">Brake</h6>
+                        <p>ABS
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <iconify-icon icon="icon-park:oceanengine"
+                        class="property-icon border rounded-2 p-3"></iconify-icon>
+                      <div class="ms-4 mt-2">
+                        <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">Engine (Hp)
+                        </h6>
+                        <p>3,000</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <iconify-icon icon="fa6-solid:car-rear" class="property-icon border rounded-2 p-3"></iconify-icon>
+                      <div class="ms-4 mt-2">
+                        <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">VIN</h6>
+                        <p>45456444</p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+                <hr>
+                <div class="price my-5">
+                  <h3 class=" fs-2 mb-4">Price Details</h3>
+                  <p> <span class="fw-bold  ">Rent/Day :</span> 9000 (negotiable)</p>
+                  <p> <span class="fw-bold  ">Rent/Month :</span> 30,000 (negotiable)</p>
+                  <p> <span class="fw-bold  ">Service Charge :</span> 500 (service providing)</p>
+                  <p> <span class="fw-bold  ">Extra Service :</span> As per Service taken</p>
+                  <p> <span class="fw-bold  ">Security Deposit :</span> 1500 </p>
+
+                </div>
+                <hr>
+                <div class="details my-5">
+                  <h3 class=" fs-2 mb-4">Vehicle Details</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, inventore! Obcaecati rem, eligendi fugiat harum nemo dicta, similique repellendus porro explicabo sed et labore, modi delectus facere optio ab quaerat?assistant Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero optio sequi repudiandae vitae magnam pariatur eos, totam, adipisci, consectetur consequuntur quasi! Molestias, minus magnam debitis illo corrupti adipisci eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam atque cumque maiores quasi! Maiores harum porro voluptatem odio reiciendis perspiciatis doloribus ullam vitae fuga ab veritatis beatae fugit, et vel.
+                  </p>
+
+                </div>
+                <hr>
+                <div class="feature my-5">
+                  <h3 class=" fs-2 mb-4">Features & Amenities</h3>
+                  <div class="d-md-flex">
+                    <ul class="ms-4 me-5">
+                      <li>Multi-zone A/C </li>
+                      <li>Heated front seats </li>
+                      <li>Andriod Auto </li>
+                      <li>Navigation system </li>
+                    </ul>
+                    <ul class="ms-4 me-5">
+                      <li>6 Cylinders</li>
+                      <li>Adaptive Cruise Control </li>
+                      <li>Intermittent wipers </li>
+                      <li>4 power windows </li>
+                    </ul>
+                    <ul class="ms-4">
+                      <li>Premium sound system </li>
+                      <li>Bluetooth </li>
+                      <li>Keyles Start</li>
+                      <li>Memory seat </li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </article>
+            <div id="post-author-info" class="border-top border-bottom py-5">
+              <div class="row d-flex align-items-center">
+                <div class="col-md-3">
+                  <div class="image-holder">
+                    <a itemprop="url" href="#">
+                      <img src="images/team2.jpg" class="img-fluid" alt="author">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="post-author-content">
+                    <div class="element-title text-uppercase mt-3">
+                      <a itemprop="url" href="#">Jenn Younes</a>
+                    </div>
+                    <span class="author-position my-5">Owner</span>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime magni reprehenderit accusantium dignissimos distinctio inventore similique, corrupti earum dolorem adipisci porro voluptates est mollitia assumenda asperiores deserunt aspernatur, rerum laborum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores neque quis aspernatur animi eius. Quos, ea vitae quasi odio perspiciatis eaque aliquid et amet. Recusandae, dolor. Quis amet vel magni!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section id="post-comment">
+              <div class="container">
+                <div class="row my-5">
+                  <div class="comments-wrap">
+                    <h3 class="text-uppercase mb-5">
+                      <span class="count">3</span> Comments
+                    </h3>
+                    <div class="comment-list">
+                      <article class="comment-item pb-3 row">
+                        <div class="col-md-1">
+                          <img src="images/commentor-item1.jpg" alt="default"
+                            class="commentor-image img-fluid rounded-circle">
+                        </div>
+                        <div class="col-md-10">
+                          <div class="author-post mb-4">
+                            <div class="comment-meta mt-3 mt-md-0 text-uppercase d-flex gap-3 text-black">
+                              <div class="author-name fw-bold ">Lufy carlson</div>
+                              <span class="meta-date  -50">Jul 10</span>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur nostrum dolor doloremque unde nam? A, reprehenderit ex alias laborum eius obcaecati tempore quisquam tempora, vitae similique quaerat pariatur, distinctio quae.</p>
+                            <div class="comments-reply border-animation">
+                              <a href="#">
+                                <i class="icon icon-mail-reply"></i>Reply </a>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="comment-item pb-3 row child-comments">
+                        <div class="col-md-1">
+                          <img src="images/commentor-item2.jpg" alt="default"
+                            class="commentor-image img-fluid rounded-circle">
+                        </div>
+                        <div class="col-md-10">
+                          <div class="author-post mb-4">
+                            <div class="comment-meta mt-3 mt-md-0 text-uppercase d-flex gap-3 text-black ">
+                              <div class="author-name fw-bold ">Lora leigh</div>
+                              <span class="meta-date  -50">Jul 10</span>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur nostrum dolor doloremque unde nam? A, reprehenderit ex alias laborum eius obcaecati tempore quisquam tempora, vitae similique quaerat pariatur, distinctio quae.</p>
+                            <div class="comments-reply border-animation">
+                              <a href="#">
+                                <i class="icon icon-mail-reply"></i>Reply </a>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="comment-item pb-3 row">
+                        <div class="col-md-1">
+                          <img src="images/commentor-item3.jpg" alt="default"
+                            class="commentor-image img-fluid rounded-circle">
+                        </div>
+                        <div class="col-md-10">
+                          <div class="author-post mb-4">
+                            <div class="comment-meta mt-3 mt-md-0 text-uppercase d-flex gap-3 text-black ">
+                              <div class="author-name fw-bold ">Natalie dormer</div>
+                              <span class="meta-date  -50">Jul 10</span>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur nostrum dolor doloremque unde nam? A, reprehenderit ex alias laborum eius obcaecati tempore quisquam tempora, vitae similique quaerat pariatur, distinctio quae.</p>
+                            <div class="comments-reply border-animation">
+                              <a href="#">
+                                <i class="icon icon-mail-reply"></i>Reply </a>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="comment-respond my-5">
+                    <h3 class="text-uppercase">Leave a Comment</h3>
+                    <p>Your email address will not be published. Required fields are marked *</p>
+                    <form method="post" class="form-group padding-small">
+                      <div class="row">
+                        <div class="col-lg-12 mb-3">
+                          <textarea class="form-control ps-3 pt-3" id="comment" name="comment"
+                            placeholder="Write your comment here *"></textarea>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                          <input class="form-control ps-3" type="text" name="author" id="author"
+                            placeholder="Write your full name here *">
+                        </div>
+                        <div class="col-lg-6">
+                          <input class="form-control ps-3" type="email" name="email" id="email"
+                            placeholder="Write your e-mail address *">
+                        </div>
+                        <div class="col-lg-12">
+                          <label class="d-flex align-items-center">
+                            <input type="checkbox" class="checked-box me-2">
+                            <span class="label-body">Save my name, email, and website in this browser for the next
+                              time.</span>
+                          </label>
+                        </div>
+                        <div class="col-lg-12 mt-3">
+                          <button class="btn btn-lg btn-primary text-uppercase btn-rounded-none w-100"
+                            type="submit">Post Comment</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+        <aside class="col-md-3">
+          <div class=" ">
+            <form id="form" class="form-group flex-wrap bg-light p-3 ">
+              <h2 class=" fs-2 text-uppercase text-black my-3">Book Now</h2>
+              <div class="form-input col-lg-12 my-4">
+                <label for="exampleInputEmail1" class="form-label fs-6 text-uppercase fw-bold text-black">Full
+                  Name</label>
+                <input type="text" name="email" placeholder="Write Your Name Here" class="form-control ps-3">
+
+              </div>
+              <div class="form-input col-lg-12 my-4">
+                <label for="exampleInputEmail1" class="form-label fs-6 text-uppercase fw-bold text-black">Email
+                  Address</label>
+                <input type="text" name="email" placeholder="Write Your Email Here" class="form-control ps-3">
+              </div>
+              <div class="col-lg-12 my-4">
+                <label for="exampleInputEmail1" class="form-label fs-6 text-uppercase fw-bold text-black">Phone
+                  Number</label>
+                <input type="text" name="email" placeholder="Phone Number" class="form-control ps-3">
+              </div>
+
+              <div class="col-lg-12 my-4">
+                <label for="exampleInputEmail1" class="form-label fs-6 text-uppercase fw-bold text-black">Pick-up
+                  Date</label>
+                <div class="input-group date" id="datepicker">
+                  <input type="date" id="start" name="appointment" min="2023-01-01" max="2023-12-31"
+                    class="form-control ps-3">
+                </div>
+              </div>
+              <div class="col-lg-12 my-4">
+                <label for="exampleInputEmail1" class="form-label fs-6 text-uppercase fw-bold text-black">Pick-up
+                  Time</label>
+                <div class="input-group time" id="timepicker">
+                  <input type="time" id="start" name="appointment" min="9AM" max="6PM" class="form-control ps-3">
+                </div>
+              </div>
+              <div class="col-lg-12 my-4">
+                <label for="exampleInputEmail1" class="form-label fs-6 text-uppercase fw-bold text-black">Returning
+                  date</label>
+                <div class="input-group date" id="datepicker">
+                  <input type="date" id="start" name="appointment" min="2023-01-01" max="2023-12-31"
+                    class="form-control ps-3">
+                </div>
+              </div>
+              <div class="col-lg-12 my-4">
+                <label for="exampleInputEmail1" class="form-label fs-6 text-uppercase fw-bold text-black">Returning
+                  Time</label>
+                <div class="input-group time" id="timepicker">
+                  <input type="time" id="start" name="appointment" min="9AM" max="6PM" class="form-control ps-3">
+                </div>
+              </div>
+              <div class="col-lg-12 my-4">
+                <label for="exampleInputEmail1" class="form-label fs-6 text-uppercase fw-bold text-black">Your
+                  Message</label>
+                <textarea placeholder="Write Your Message Here" class="form-control ps-3" rows="8"></textarea>
+              </div>
+              <div class="d-grid mb-3">
+                <button class="btn btn-primary btn-lg text-uppercase btn-rounded-none">Book</button>
+              </div>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- services section start  -->
+  <section id="services">
+
+    <div class="container  py-5 my-5">
+      <div class="row py-5 ">
+        <div class=" pb-5  col-10 col-sm-8 col-lg-6">
+          <h2 class="">See <span class="text-primary">best services</span> for your solution </h2>
+        </div>
+        <div class=" pb-5  col-lg-6">
+          <p class="pt-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quam non exercitationem, aliquam dignissimos sunt numquam iusto ad enim in explicabo, libero a ipsam. Nam fugiat rerum eum delectus quaerat?
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="service-2">
+    <div class=" services-sub container mb-5 pb-5">
+      <div class="row">
+        <div class=" mt-4 col-6 col-lg-3">
+          <div class="services-components text-center pt-4 pb-3">
+            <iconify-icon class="services-icon my-2" icon="solar:shield-check-outline"></iconify-icon>
+            <h5>Secured Payment</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+        <div class=" mt-4 col-6 col-lg-3">
+          <div class="services-components text-center pt-4 pb-3">
+            <iconify-icon class="services-icon my-2" icon="solar:bookmark-opened-outline"></iconify-icon>
+            <h5>any class vehicle</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+        <div class=" mt-4 col-6 col-lg-3">
+          <div class="services-components text-center pt-4 pb-3">
+            <iconify-icon class="services-icon my-2" icon="solar:user-circle-outline"></iconify-icon>
+            <h5>Car sharing options</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+        <div class=" mt-4 col-6 col-lg-3">
+          <div class="services-components text-center pt-4 pb-3">
+            <iconify-icon class="services-icon my-2" icon="solar:call-chat-outline"></iconify-icon>
+            <h5>Help center & Support</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- blog section start  -->
+  <section id="blog">
+
+    <div class="container  py-5 my-5">
+      <div class="row py-5 ">
+        <div class="  pt-3 col-10 col-sm-8 col-lg-5">
+          <h2 class="">Our <span class="text-primary">Recent Posts</span> </h2>
+          <a href="blog.html" class="btn btn-primary mt-4">Read Blogs </a>
+
+
+
+        </div>
+        <div class=" mt-5 mt-lg-0 col-lg-7">
+          <div class=" pt-3 d-flex">
+            <div class="">
+              <h3>Jan 2 <br> 2024</h3>
+            </div>
+            <div class="ms-5">
+              <p>Tips</p>
+              <a href="single-post.html" class="blog-title">Safest car rental services in 2023</a>
+            </div>
+          </div>
+          <hr>
+          <div class=" pt-3 d-flex">
+            <div class="">
+              <h3>Jan 5<br> 2024</h3>
+            </div>
+            <div class="ms-5">
+              <p>Rental</p>
+              <a href="single-post.html" class="blog-title">Best car collection in the world</a>
+            </div>
+          </div>
+          <hr>
+          <div class=" pt-3 d-flex">
+            <div class="">
+              <h3>Jan 8 <br> 2024</h3>
+            </div>
+            <div class="ms-5">
+              <p>Tricks</p>
+              <a href="single-post.html" class="blog-title">Which car is the best for travel</a>
+            </div>
+          </div>
+          <hr>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+ <!-- call-to-action section start  -->
+ <section id="action" class="position-relative">
+
+  <div class="pattern-overlay pattern-right position-absolute">
+      <img src="images/call-to-action-pattern.png" alt="pattern">
+  </div>
+
+  <div class="container  py-5 my-5">
+      <div class="row py-5 ">
+          <div class=" col-10 col-sm-8 col-lg-6">
+              <h2 class="">Let’s begin with <span class="text-primary">GoRental rental.</span> </h2>
+          </div>
+          <div class=" col-lg-6">
+              <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla incidunt sunt temporibus vero sequi laudantium, sint, quae, repellendus officia inventore ullam. Blanditiis sunt natus ipsum quasi voluptatem rerum et. Voluptates.
+              </p>
+              <a href="contact.html" class="btn btn-primary mt-2">Contact us </a>
+          </div>
+      </div>
+
+  </div>
+
+</section>
+
+<!-- Footer Section Starts -->
+<section id="footer">
+  <div class="container footer-container mt-5">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
+
+          <div class=" col-md-4 mt-5 mt-md-0 ">
+              <img src="images/logo.png" alt="image">
+              <p class="py-3">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate cumque consequuntur facere eveniet!
+              </p>
+              <div class="d-flex align-items-center ">
+                  <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                          icon="mdi:facebook"></iconify-icon></a>
+                  <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                          icon="mdi:twitter"></iconify-icon></a>
+                  <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                          icon="mdi:instagram"></iconify-icon></a>
+                  <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                          icon="mdi:linkedin"></iconify-icon></a>
+                  <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                          icon="mdi:youtube"></iconify-icon></a>
+              </div>
+
+          </div>
+
+          <div class="col-md-7 offset-md-1 mt-5">
+              <ul class="footer-nav list-unstyled">
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="about.html">About</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="blog.html">Blog</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="cars.html">Cars</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="booking.html">Booking</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="services.html">Services</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="pricing.html">Pricing</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="contact.html">Contact</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="team.html">Team</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="review.html">Reviews</a></li>
+                  <li class="nav-item me-2 mb-3"><a class="nav-link px-4" href="faq.html">FAQs</a></li>
+              </ul>
+          </div>
+
+      </footer>
+  </div>
+
+
+
+  <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
+
+  <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 pt-4">
+          <div class="col-md-6 d-flex align-items-center">
+              <p>© 2024 GoRental - All rights reserved</p>
+
+          </div>
+          <div class="col-md-6 d-flex align-items-center justify-content-end">
+              <p class="">© 2024 Copyright By:<a href="#" class="website-link" target="_blank">
+                      <b><u>GoRental</u></b></a></p>
+          </div>
+
+      </footer>
+  </div>
+</section>
+
+
+  <!-- script ================================================== -->
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+</body>
+
+</html>
